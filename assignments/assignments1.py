@@ -1,5 +1,7 @@
 # 31/10/2020
 # Angel Rodríguez
+# CI: 27015036
+# Realizado usando python 3.7.7
 
 # 1. Escriba un programa para imprimir el texto suministrado en el formato mostrado:
 # Texto: “Twinkle, twinkle, listtle start, How I wonder what you are! Up above the world so
@@ -119,8 +121,13 @@ def ejercicio8(numAsStr: str = "-123"):
 # tenemos 3, 5, 6 y 9. La suma de estos múltiplos es 23. Encuentre la suma de los múltiplos
 # de 3 y 5 por debajo de 1000
 
-def ejercicio9():
-    return "TODO"
+def ejercicio9(toplimit = 1000):
+    total = 0
+    for i in range(0,toplimit):
+    	if i%3==0 or i%5==0: 
+		    total+=i
+    print(total)
+    return total
 
 # 10. La serie de Fibonacci es aquella que se genera como la suma de los dos números anteriores.
 # Por ejemplo, la serie para los números menores a 100 sería:
@@ -152,7 +159,17 @@ def ejercicio10():
 # de Fibonacci menores o iguales a 4.000.000.
 
 def ejercicio11():
-    return "TODO"
+    numeroprevio=1
+    numeroactual=2
+    sumatotal=0   
+    while numeroactual<=4000000:
+        if numeroactual%2==0:
+            sumatotal+=numeroactual
+        temporal=numeroactual
+        numeroactual=numeroactual+numeroprevio
+        numeroprevio=temporal
+    print(sumatotal)
+    return sumatotal
 
 # 12. Escriba un programa que acepte una serie de números, con varios repetidos. La salida debe
 # indicar la serie sin repetidos, la longitud de la serie y ordenada en orden creciente. Ejemplo,
