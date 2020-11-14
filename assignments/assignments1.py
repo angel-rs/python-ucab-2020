@@ -159,15 +159,15 @@ def ejercicio10():
 # de Fibonacci menores o iguales a 4.000.000.
 
 def ejercicio11():
-    numeroprevio=1
-    numeroactual=2
-    sumatotal=0   
-    while numeroactual<=4000000:
-        if numeroactual%2==0:
-            sumatotal+=numeroactual
-        temporal=numeroactual
-        numeroactual=numeroactual+numeroprevio
-        numeroprevio=temporal
+    numeroprevio = 1
+    numeroactual = 2
+    sumatotal = 0   
+    while numeroactual <= 4000000:
+        if numeroactual % 2 == 0:
+            sumatotal += numeroactual
+        temporal = numeroactual
+        numeroactual = numeroactual + numeroprevio
+        numeroprevio = temporal
     print(sumatotal)
     return sumatotal
 
