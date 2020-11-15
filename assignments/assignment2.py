@@ -215,7 +215,7 @@ def ejercicio_15(notas=[13, 20, 15, 18, 12, 19, 14, 17, 18]):
         return nota > 17
     printInputOutput(notas, list(filter(filtrar_x_nota, notas)))
 
-
+print("Angel Rodriguez, CI 27015036")
 ejercicio_1()
 ejercicio_2()
 ejercicio_3()
