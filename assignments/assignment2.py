@@ -142,9 +142,13 @@ def ejercicio_8(number=16):
 # 9. Escriba una función que reciba como entrada una lista y la salida sea la lista con los
 # elementos intercambiados, ejemplo: entrada: [1, 2, 3, 4, 5], salida: [2, 1, 4, 3, 5]
 
-def ejercicio_9():
+
+def ejercicio_9(lista=[1, 2, 3, 4, 5]):
     info()
-    print("TODO")
+    copy = lista.copy()
+    for i in range(0, len(lista) - 1, 2):
+        copy[i], copy[i+1] = lista[i+1], lista[i]
+    printInputOutput(lista, copy)
 
 # 10. La función zip() de Python, toma dos o más objetos iterables y retorna una lista de tuples
 # con un elemento de cada lista de entrada, de acuerdo a su índice. Ejemplo entrada, paises
@@ -152,26 +156,32 @@ def ejercicio_9():
 # La salida es [('China', 1391), ('India', 1364), ('Estados Unidos', 327), ('Indonesia', 264)].
 # Escriba una función llamada my_zip(), que realice lo mismo (limítelo a sólo dos iterables).
 
-def ejercicio_10(paises = ["China", "India", "Estados Unidos", "Indonesia"], poblaciones=[1391, 1364, 327, 264]):
+
+def ejercicio_10(paises=["China", "India", "Estados Unidos", "Indonesia"], poblaciones=[1391, 1364, 327, 264]):
     info()
+
     def my_zip(x, y):
-      zipeado = []
-      for i in range(len(x)):
-          zipeado.append((x[i], y[i]))
-      return zipeado
-    printInputOutput(f"Paises: {paises}\nPoblaciones: {poblaciones}", my_zip(paises, poblaciones))
+        zipeado = []
+        for i in range(len(x)):
+            zipeado.append((x[i], y[i]))
+        return zipeado
+    printInputOutput(
+        f"Paises: {paises}\nPoblaciones: {poblaciones}", my_zip(paises, poblaciones))
 
 # 11. Escriba una función lambda que encuentre el valor de 𝑒^𝑥
 # dada por la expresión ((1 + 1/n)^n)^x
 # para un valor de n= 1000.
 
-def ejercicio_11():
+
+def ejercicio_11(x=5):
     info()
-    print("TODO")
+    n = 1000
+    printInputOutput(x, (lambda x: ((1 + 1/n) * n) * x)(x))
 
 # 12. Escriba una función lambda que obtenga el primer y último valor de una lista.
 
-def ejercicio_12(l= [1,2,3,4,5]):
+
+def ejercicio_12(l=[1, 2, 3, 4, 5]):
     info()
     printInputOutput(l, (lambda x: [x[0], x[len(x)-1]])(l))
 
@@ -179,15 +189,17 @@ def ejercicio_12(l= [1,2,3,4,5]):
 # cuales son pares y cuales impares, por ejemplo, entrada: [1, 2, 3 , 4] salida: [“impar”, “par”,
 # “impar”, “par”]. Ayuda: recuerde la forma abreviada del if
 
-def ejercicio_13():
+
+def ejercicio_13(lista=[1, 2, 3, 4]):
     info()
-    print("TODO")
+    printInputOutput(lista, ["par" if n % 2 == 0 else "impar" for n in lista])
 
 # 14. Escriba una función map, para que dada una lista con nombres, la salida sea la lista con los
 # nombres en Mayúsculas. Ejm: entrada [“alfredo”, “luis”, “margarita”, “rosa”], salida
 # [“ALFREDO”, “LUIS”, “MARGARITA”, “ROSA”]
 
-def ejercicio_14(nombres= ["alfredo", "luis", "margarita", "rosa"]):
+
+def ejercicio_14(nombres=["alfredo", "luis", "margarita", "rosa"]):
     info()
     printInputOutput(nombres, list(map(lambda s: s.capitalize(), nombres)))
 
@@ -195,10 +207,12 @@ def ejercicio_14(nombres= ["alfredo", "luis", "margarita", "rosa"]):
 # una lista con aquellas notas superiores a 17. Ejm: entrada [13, 20, 15, 18, 12, 19, 14, 17,18]
 # la salida debe ser [20, 18, 19, 18]
 
-def ejercicio_15(notas = [13, 20, 15, 18, 12, 19, 14, 17,18]):
+
+def ejercicio_15(notas=[13, 20, 15, 18, 12, 19, 14, 17, 18]):
     info()
+
     def filtrar_x_nota(nota):
-      return nota > 17
+        return nota > 17
     printInputOutput(notas, list(filter(filtrar_x_nota, notas)))
 
 
